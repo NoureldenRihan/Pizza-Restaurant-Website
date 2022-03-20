@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to My MrPizza Restaurent</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <!-- Start Navbar -->
+      <nav id="navbar" class="navbar">
+        <h1 class="logo">Pizza</h1>
+        <ul>
+          <li><a href="#landing"> Home</a></li>
+          <li><a href="#menu"> Menu</a></li>
+          <li><a href="#gallery"> Gallery</a></li>
+          <li><a href="#reservation"> Reservation</a></li>
+          <li><a href="#about"> About Us</a></li>
+        </ul>
+      </nav>
+      <!-- End Navbar -->
+      <!-- Start Options box -->
+
+      <section class="options-area">
+        <div class="icon">>></div>
+        <div class="options-box">
+          <div class="options">
+            <div class="color-option option">
+              <h3>Color palette</h3>
+              <ul>
+                <li class="palette p1 active" data-num="1"></li>
+                <li class="palette p2" data-num="2"></li>
+                <li class="palette p3" data-num="3"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- End Options box -->
+      <!-- Start Landing -->
+      <section id="landing" class="landing">
+        <div class="overlay">
+          <div class="container">
+            <div class="content">
+              <h1>Best Pizza in Town</h1>
+              <h3>Freshly Baked</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Landing -->
+      <!-- Start Menu -->
+      <section id="menu" class="menu">
+        <div class="container">
+          <div class="intro-text">
+            <h1>Our Menu</h1>
+            <h4>Freshly Made and Baked Pizzas</h4>
+          </div>
+          <div id="main-menu" class="main-menu"></div>
+        </div>
+      </section>
+      <!-- End Menu -->
+      <hr class="section-separator" />
+      <!-- Start Gallery -->
+      <section id="gallery" class="gallery">
+        <div class="container">
+          <div class="intro-text">
+            <h1>Our Gallery</h1>
+          </div>
+          <div class="main-gallery">
+            <div id="leftIcon" class="leftIcon" onclick="moveGallery('left');">
+              &lt;
+            </div>
+            <div id="right" class="gallery-img">
+              <img id="rightImg" src="" alt="pizza image" />
+            </div>
+            <div id="middle" class="gallery-img">
+              <img id="middleImg" src="" alt="pizza image" />
+            </div>
+            <div id="left" class="gallery-img">
+              <img id="leftImg" src="" alt="pizza image" />
+            </div>
+            <div
+              id="rightIcon"
+              class="rightIcon"
+              onclick="moveGallery('right');"
+            >
+              &gt;
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Gallery -->
+      <hr class="section-separator" />
+      <!-- Start Reservation -->
+      <section id="reservation" class="reservation">
+        <div class="container">
+          <div class="intro-text">
+            <h1>Reservations</h1>
+            <h4>Book a Table Early for the best Experience</h4>
+          </div>
+          <div class="reserve">
+            <form id="fake-form" action="">
+              <label for="date"
+                >Date: <input type="date" name="date" required
+              /></label>
+              <label for="time"
+                >Time: <input type="time" name="time" required
+              /></label>
+              <label for="persons"
+                >Persons:
+                <input type="number" name="persons" min="0" max="20" required
+              /></label>
+              <input type="submit" value="Book Table" />
+            </form>
+          </div>
+        </div>
+      </section>
+      <!-- End Reservation -->
+      <hr class="section-separator" />
+      <!-- Start About -->
+      <section id="about" class="about">
+        <div class="container">
+          <div class="intro-text">
+            <h1>About Us</h1>
+          </div>
+          <div class="aboutus">
+            <h3>
+              Whether it is Charred Wood Baking or Modern Ovens; We have
+              Mastered all and every technique for baking pizzas. Established
+              since 1882, we have gone through every age with its pizza recipes
+              and cooking techniques - American or Italian - You will find here
+              at <span>Pizza</span>.
+            </h3>
+          </div>
+        </div>
+      </section>
+      <!-- End About -->
+      <hr class="section-separator" />
+      <!-- Start Footer -->
+      <footer>
+        <h3>
+          Made With Love by
+          <a href="https://github.com/NoureldenRihan2002">Nourelden Rihan</a>
+        </h3>
+      </footer>
+      <!-- End Footer -->
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

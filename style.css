@@ -1,0 +1,627 @@
+:root {
+  --low-transition: 0.4s;
+  --main-color: #ff7800;
+  --main-alt-color: #ffbc97;
+  --secondary-color: #ffe300;
+  --common-color: #e1e1e1;
+}
+
+/* Start Global Rules */
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Roman", Times, serif;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+/* End Global Rules */
+/* Start Responsive Containers */
+
+/* Small Screens */
+@media (min-width: 767px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* Medium Screens */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* Large Screens */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* End Responsive Containers */
+/* Start Components */
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0, 0.65);
+}
+
+.intro-text {
+  text-align: center;
+  margin: 0 0 20px 0;
+}
+
+.intro-text h1 {
+  font-size: 70px;
+  font-weight: 900;
+  color: var(--main-color);
+}
+
+@media (max-width: 767px) {
+  .intro-text h1 {
+    font-size: 50px;
+  }
+}
+
+.intro-text h3 {
+  font-size: 30px;
+  font-weight: 200;
+}
+
+.section-separator {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  border-radius: 30px;
+  width: 80%;
+  background-color: var(--main-color);
+  border: 3px solid var(--main-color);
+}
+
+/* End Components */
+/* Start Navbar */
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  transition: var(--low-transition);
+}
+
+.movedNavbar {
+  background-color: rgb(0, 0, 0, 0.65);
+  transition: var(--low-transition);
+}
+
+@media (max-width: 767px) {
+  .movedNavbar {
+    top: 10px;
+  }
+}
+
+.navbar .logo {
+  margin-top: 10px;
+  font-size: 50px;
+  width: 100%;
+  color: var(--main-color);
+  font-weight: 900;
+  transition: var(--low-transition);
+}
+
+.navbar .logo:hover {
+  color: var(--secondary-color);
+}
+
+.navbar ul li {
+  display: inline-block;
+  padding: 10px 0;
+  position: relative;
+  transition: var(--low-transition);
+}
+
+.navbar ul li:not(:last-of-type) {
+  margin-right: 30px;
+}
+
+.navbar ul li::before {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--main-color);
+  transition: var(--low-transition);
+  overflow: hidden;
+}
+
+.navbar ul li:hover::before {
+  width: 100%;
+}
+
+.navbar ul li a {
+  color: var(--common-color);
+}
+
+.navbar ul li:hover a {
+  color: white;
+}
+
+@media (max-width: 767px) {
+  .navbar .logo {
+    font-size: 35px;
+  }
+
+  .navbar ul li {
+    display: inline-block;
+    padding: 5px 0;
+  }
+  .navbar ul li:not(:last-of-type) {
+    margin-right: 15px;
+  }
+}
+
+/* End Navbar */
+/* Start Options box */
+
+.options-area {
+  position: fixed;
+  z-index: 200;
+}
+
+.options-area .icon {
+  position: absolute;
+  top: 100px;
+  left: 0px;
+  font-size: 30px;
+  background-color: var(--common-color);
+  padding: 15px;
+  border-radius: 0 3px 3px 0;
+  text-align: center;
+  transition: calc(var(--low-transition) + 0.2s);
+  color: var(--main-color);
+  cursor: pointer;
+  font-weight: 900;
+  letter-spacing: -5px;
+}
+
+.options-area .icon .clicked {
+  transform: rotate(180deg);
+}
+
+.options-box {
+  position: fixed;
+  background-color: var(--common-color);
+  width: 40vw;
+  min-height: 100vh;
+  top: 0;
+  left: -100vw;
+  transition: calc(var(--low-transition) + 0.3s);
+}
+
+.options-box .options {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.options-box .options .option {
+  margin-top: 20px;
+  padding: 20px;
+  width: 90%;
+  box-shadow: 1px 1px 10px gray;
+  border-radius: 30px;
+}
+
+.options-box .options .option h3 {
+  font-size: 30px;
+  color: var(--main-color);
+  margin-bottom: 15px;
+}
+
+.options-box .options .color-option ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.options-box .options .color-option ul li {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: black;
+  display: inline-block;
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.options-box .options .color-option ul li.active {
+  border: 3px solid white;
+}
+
+.options-box .options .background-option button {
+  padding: 10px 20px;
+  width: 48%;
+  border: 2px solid var(--main-color);
+  transition: var(--low-transition);
+  color: var(--main-color);
+  border-radius: 30px;
+  font-size: 20px;
+  opacity: 0.5;
+}
+
+.options-box .options .background-option button:hover {
+  background-color: var(--main-color);
+  color: white;
+  opacity: 1;
+}
+
+.options-box .options .background-option button.active {
+  opacity: 1;
+}
+
+/* End Options box */
+/* Start Landing */
+
+.landing {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(./imgs/pizza-restaurent-banner-cropped-1920.jpg);
+  background-size: cover;
+  transition: calc(var(--low-transition) + 0.6s);
+}
+
+.landing .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--common-color);
+  transition: var(--low-transition);
+}
+
+.landing .content h1 {
+  font-size: 85px;
+}
+
+.landing .content h3 {
+  font-size: 30px;
+}
+
+@media (max-width: 767px) {
+  .landing .content h1 {
+    font-size: 35px;
+  }
+
+  .landing .content h3 {
+    font-size: 15px;
+  }
+}
+
+/* End Landing */
+/* Start Menu */
+
+.menu {
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.menu .main-menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+  margin-top: 35px;
+}
+
+.menu .main-menu .menu-item {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  padding: 20px;
+  width: 100%;
+  border-radius: 30px;
+  box-shadow: 1px 1px 10px gray;
+  transition: var(--low-transition);
+}
+
+.menu .main-menu .menu-item:hover {
+  transform: scale(1.05) rotate(1.5deg);
+}
+
+.menu .main-menu .menu-item h1 {
+  font-size: 60px;
+  margin-bottom: 15px;
+  color: var(--main-color);
+}
+
+.menu .main-menu .menu-item h2 {
+  font-size: 45px;
+  margin-bottom: 10px;
+  color: var(--secondary-color);
+}
+
+.menu .main-menu .menu-item h3 {
+  font-size: 30px;
+  margin-bottom: 5px;
+  color: var(--main-alt-color);
+}
+
+.menu .main-menu .menu-item h4 {
+  font-size: 20px;
+
+  color: var(--main-alt-color);
+}
+
+@media (max-width: 1200px) {
+  .menu .main-menu .menu-item h1 {
+    font-size: 45px;
+    margin-bottom: 10px;
+  }
+
+  .menu .main-menu .menu-item h2 {
+    font-size: 30px;
+    margin-bottom: 7px;
+  }
+
+  .menu .main-menu .menu-item h3 {
+    font-size: 25px;
+    margin-bottom: 4px;
+  }
+
+  .menu .main-menu .menu-item h4 {
+    font-size: 18px;
+  }
+}
+
+/* End Menu */
+/* Start Gallery */
+
+.gallery {
+  display: flex;
+  justify-content: center;
+}
+
+.main-gallery {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 30px;
+  position: relative;
+}
+
+.main-gallery .rightIcon,
+.main-gallery .leftIcon {
+  font-size: 50px;
+  font-weight: 900;
+  transition: var(--low-transition);
+  position: absolute;
+}
+
+.main-gallery .rightIcon {
+  right: 5px;
+}
+
+.main-gallery .leftIcon {
+  left: 5px;
+}
+
+.main-gallery .rightIcon:hover,
+.main-gallery .leftIcon:hover {
+  color: var(--main-color);
+}
+
+.main-gallery .rightIcon:hover {
+  right: 0;
+}
+
+.main-gallery .leftIcon:hover {
+  left: 0;
+}
+
+.main-gallery .gallery-img {
+  transition: var(--low-transition);
+}
+
+.main-gallery .gallery-img img {
+  max-width: 315px;
+  border-radius: 30px;
+  transition: var(--low-transition);
+}
+
+.main-gallery .gallery-img img.closeup {
+  transition: var(--low-transition);
+  transform: scale(1.5);
+}
+
+.main-gallery #right {
+  margin-left: 20px;
+}
+
+.main-gallery #left {
+  margin-right: 20px;
+}
+
+@media (max-width: 1200px) {
+  .main-gallery .gallery-img img {
+    max-width: 390px;
+  }
+
+  .gallery .main-gallery #right {
+    display: none;
+  }
+}
+
+@media (max-width: 992px) {
+  .main-gallery .gallery-img img {
+    max-width: 450px;
+  }
+
+  .gallery .main-gallery #left {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-gallery .gallery-img img {
+    max-width: 300px;
+    padding: 20px;
+    margin: 0 20px;
+  }
+}
+
+/* End Gallery */
+/* Start Reservations */
+
+.reservation {
+  display: flex;
+  justify-content: center;
+  transition: var(--low-transition);
+}
+
+.reservation .reserve {
+  transition: calc(var(--low-transition) + 0.4s);
+}
+
+.reservation .reserve form {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.reservation .reserve form label {
+  width: calc(100% / 3);
+  font-size: 30px;
+  color: var(--main-color);
+}
+
+.reservation .reserve form label input {
+  border-width: 0 0 2px 0;
+  border-color: var(--main-alt-color);
+  font-size: 20px;
+}
+
+.reservation .reserve form label input:focus {
+  outline: none;
+}
+
+.reservation .reserve form input[type="submit"] {
+  margin-top: 40px;
+  padding: 15px 45px;
+  border: 3px solid var(--main-color);
+  color: var(--main-color);
+  background-color: white;
+  font-size: 25px;
+  border-radius: 30px;
+  transition: var(--low-transition);
+}
+
+.reservation .reserve form input[type="submit"]:hover {
+  background-color: var(--main-color);
+  color: white;
+}
+
+.reservation .reserve .reserved {
+  text-align: center;
+  font-size: 50px;
+  color: var(--main-color);
+}
+
+@media (max-width: 767px) {
+  .reservation .reserve form {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .reservation .reserve form label {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+}
+
+/* End Reservations */
+/* Start About */
+
+.about {
+  display: flex;
+  justify-content: center;
+}
+
+.about .aboutus {
+  padding: 10px 30px;
+}
+
+.about .aboutus span {
+  color: var(--main-color);
+  font-size: 25px;
+}
+/* End About */
+/* Start Footer */
+
+footer {
+  text-align: center;
+  width: 100%;
+  margin-top: -50px;
+  padding-bottom: 20px;
+}
+
+footer h3 {
+  font-size: 25px;
+}
+
+footer h3 a {
+  color: var(--main-color);
+}
+
+/* End Footer */

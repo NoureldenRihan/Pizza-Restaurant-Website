@@ -29,7 +29,7 @@ window.onload = () => {
 
   randBackground();
 
-  fetch("https://pizza-data-api.herokuapp.com/pizzas")
+  fetch("https://pizza-data-api.cyclic.app/pizzas")
     .then((res) => res.json())
     .then((data) => {
       menuSetup(data);
@@ -48,7 +48,7 @@ window.onload = () => {
 
 // Fetching data every 10 Minutes to Keep the Menu Updated
 setInterval(() => {
-  fetch("https://pizza-data-api.herokuapp.com/pizzas")
+  fetch("https://pizza-data-api.cyclic.app/pizzas")
     .then((res) => res.json())
     .then((data) => {
       menuSetup(data);
